@@ -8,6 +8,6 @@ print(" Last digit of {0} is {1}".format(number,  L_digit), end="")
 if L_digit > 5:
     print(" and is greater than 5")
 elif L_digit == 0:
-    print(" 0")
+    print("0")
 else:
     print("less than 6 and not 0")
