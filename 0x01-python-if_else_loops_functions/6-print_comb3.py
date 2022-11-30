@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 # Print all possible different combinations of two digits in ascending order.
 for digit1 in range(0, 10):
