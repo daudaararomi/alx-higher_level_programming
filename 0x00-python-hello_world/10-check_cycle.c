@@ -6,17 +6,22 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp1 = NULL, *temp2 = NULL;
+	listint_t *list1, *list2;
 
-	temp1 = list;
-	temp2 = list;
+	if (list == NULL || list->next == NULL)
+		return (0);
 
-	while (list)
+	list1 = list->next;
+	list2 = list->next->next;
+
+	while (list1 && list2 && list2->next)
 	{
-		temp2 = temp2->next;
-		if (!temp1 || !temp2)
-			return (0);
-		if (temp2 == temp1)
+		if (list1 == list2)
 			return (1);
+
+		list1 = list1->next;
+		list2 = list2->next->next;
 	}
+
 	return (0);
+}
