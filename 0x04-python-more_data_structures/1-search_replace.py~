@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+# search_replac:
+#  replaces all occurrences of an element by another in a new list
+def search_replace(my_list, search, replace):
+    i = my_list.index(search)
+    my_list.pop(i)
+    my_list.insert(i, replace)
+
+    
