@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+#safe_print_list - prints x elements of a list
+
+def safe_print_list(my_list=[], x=0):
+    try:
+        i = 0
+        while i < x:
+            print("{}".format(my_list[i]), end='')
+            i = i + 1
+        print()
+        return i
+    except Index error:
+        print()
+        return i
+    pass
