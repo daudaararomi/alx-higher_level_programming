@@ -14,24 +14,24 @@ class Square:
         """
         self.__size = size
 
-        @property
-        def size(self):
-            """
-            finds size
-            """
-            return self.__size
+    @property
+    def size(self):
+        """
+        finds size
+        """
+        return self.__size
 
-        @size.setter
-        def size(self, value):
-            """
-            validates size is an integer that is greater than zero
-            """
-            if type(value) is not int:
-                raise TypeError('size must be an integer')
-            elif value < 0:
-                raise ValueError('size must be >= 0')
-            else:
-                self.__size = value
+    @size.setter
+    def size(self, value):
+        """
+        validates size is an integer that is greater than zero
+        """
+        if type(value) is not int:
+            raise TypeError('size must be an integer')
+        elif value < 0:
+            raise ValueError('size must be >= 0')
+        else:
+            self.__size = value
     def area(self):
                 """
         finds area of square
@@ -49,4 +49,4 @@ class Square:
             return
         for i in range(self.__size):
             print("#" * self.__size)
-        return 
+        return
