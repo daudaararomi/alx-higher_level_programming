@@ -8,7 +8,7 @@ class Square:
         """
         initializes square
         Args:
-        size: size of side of square
+            size: size of side of square
         """
         if type(size) is int:
             if size < 0:
@@ -23,4 +23,4 @@ class Square:
             Returns:
             the area of the square
                                 """
-        return self.__size ** 2
+            return self.__size ** 2
