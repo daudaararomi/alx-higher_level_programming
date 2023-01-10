@@ -1,35 +1,48 @@
-Using class ``MyList``
------------------------
+The ``1-my_list`` module
+===================
 
-Class MyList can store a list
-Has a function print_sorted to print the list in MyList sorted
+Using ``MyList``
+-------------------
 
-First import class ``MyList``
->>> MyList = __import__('1-my_list').MyList
+import module:
+>>> MyList = __import__("1-my_list").MyList
 
-Now use it:
+empty list:
+>>> ml = MyList()
+>>> ml.print_sorted()
+	    	 []
 
-Basic MyList usage (pos, neg, zero):
->>> my_list = MyList()
->>> my_list.append(-1)
->>> my_list.append(4)
->>> my_list.append(3)
->>> my_list.append(0)
->>> print(my_list)
-    [-1, 4, 3, 0]
+append new elements:
+>>> ml = MyList()
+>>> ml.append(1)
+>>> ml.append(2)
+ >>> ml.append(3)
+>>> print(ml)
+[1, 2, 3]
 
-Basic print_sorted usage:
->>> my_list.print_sorted()
-[-1, 0, 3, 4]
+already sorted list:
+>>> ml.print_sorted()
+	          [1, 2, 3]
 
-Big int MyList usage:
->>> my_list = MyList()
->>> my_list.append(999999999999)
->>> my_list.append(-1)
->>> my_list.append(0)
->>> print(my_list)
-[999999999999, -1, 0]
+unsorted list:
+       >>> ml2 = MyList()
+       >>> ml2.append(1)
+       >>> ml2.append(3)
+        >>> ml2.append(2)
+        >>> print(ml2)
+	     [1, 3, 2]
+	>>> ml2.print_sorted()
+	[1, 2, 3]
 
-Big int print_sorted usage:
-    >>> my_list.print_sorted()
-        [-1, 0, 999999999999]
+negative numbers:
+>>> ml2.append(-4)
+>>> print(ml2)
+[1, 3, 2, -4]
+     >>> ml2.print_sorted()
+  [-4, 1, 2, 3]
+
+too many arguments:
+>>> ml.print_sorted(ml2)
+Traceback (most recent call last):
+   ...
+					 TypeError: print_sorted() takes 1 positional argument but 2 were given
