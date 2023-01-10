@@ -4,8 +4,8 @@
 
 def number_of_lines(filename=""):
     """ returns the number of lines in a file """
-    cnt = 0
-    with open(filename, encoding='utf-8') as f:
+    i = 0
+    with open(filename) as f:
         for line in f:
-            cnt += 1
-    return cnt
+            i += 1
+    return i
