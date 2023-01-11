@@ -11,17 +11,6 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-def to_json(self, attrs=None):
-    """Retrieves dictionary of Student with conditions to filter
-    """
-
-    if attrs == None or type(attrs) != list:
+    def to_json(self):
+        """ retrieves dictionary representation of a Student instance """
         return self.__dict__
-    else:
-        temp = {}
-        for elem in attrs:
-            if type(elem) != str:
-                return self.__dict__
-            if elem in self.__dict__.keys():
-                temp[elem] = self.__dict__[elem]
-    return temp
