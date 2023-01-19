@@ -1,4 +1,5 @@
-#s Rectangle """
+#!/usr/bin/python3
+""" this module contains the class Rectangle """
 from models.base import Base
 
 
