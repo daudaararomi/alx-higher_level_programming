@@ -70,3 +70,15 @@ class Rectangle(Base):
         """ prints the unoffical string representation of rectangle """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"\
             .format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """ updates the rectangle """
+        if len(args) != 0:
+            i = 0
+            rect_attrs = ["id", "width", "height", "x", "y"]
+            for arg in args:
+                setattr(self, rect_attrs[i], args[i])
+                i += 1
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
