@@ -21,6 +21,14 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns list of json string representation """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ writes json string represntation of list_objs """
@@ -31,6 +39,7 @@ class Base:
                 new_list.append(obj.to_dictionary())
         with open(filename, 'w') as f:
             f.write(cls.to_json_string(new_list))
+
     @classmethod
     def create(cls, **dictionary):
         """ returns instance with attributes already set """
@@ -40,6 +49,7 @@ class Base:
             dummy = cls(1)
         cls.update(dummy, **dictionary)
         return dummy
+
     @classmethod
     def load_from_file(cls):
         """ return list of instances """
